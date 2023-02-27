@@ -12,6 +12,7 @@ class GroupsController < ApplicationController
   def create
     @group = Group.new(group_params)
     @group.user = current_user
+    # group.user_id?
     @group.save
   end
 
@@ -25,6 +26,6 @@ class GroupsController < ApplicationController
   end
 
   def group_params
-    params.require(:group).permit(:name, :event_type, :hourly_rate, :size, :location, :availability)
+    params.require(:group).permit(:name, :event_type, :hourly_rate, :size, :location, :description, :availability)
   end
 end
