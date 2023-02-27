@@ -7,7 +7,7 @@ class CreateGroups < ActiveRecord::Migration[7.0]
       t.integer :size
       t.string :location
       t.text :description
-      t.boolean :availability, default: false
+      t.boolean :availability, default: true
       t.references :user, null: false, foreign_key: true
 
       t.timestamps

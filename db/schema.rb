@@ -35,7 +35,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_27_141544) do
     t.integer "size"
     t.string "location"
     t.text "description"
-    t.boolean "availability", default: false
+    t.boolean "availability", default: true
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
