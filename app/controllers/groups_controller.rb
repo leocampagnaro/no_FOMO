@@ -18,6 +18,10 @@ class GroupsController < ApplicationController
 
   def show
   end
+  
+  def destroy
+    @group.destroy
+  end
 
   private
 
