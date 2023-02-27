@@ -30,7 +30,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_27_141544) do
 
   create_table "groups", force: :cascade do |t|
     t.string "name"
-    t.string "even_type"
+    t.string "event_type"
     t.decimal "hourly_rate"
     t.integer "size"
     t.string "location"
