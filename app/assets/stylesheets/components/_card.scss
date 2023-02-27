@@ -1,0 +1,40 @@
+1- CSS
+_card.scss
+.card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.card > img {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.card h2 {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card p {
+  font-size: 10px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card .card-infos {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+}
+
+.card-infos .card-user {
+  position: absolute;
+  right: 10px;
+  top: -20px;
+  width: 40px;
+}
