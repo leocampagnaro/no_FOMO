@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: ['new', 'create', 'destroy']
+  before_action :set_booking, only: ['destroy']
 
   def new
     @group = Group.find(params[:group_id])
