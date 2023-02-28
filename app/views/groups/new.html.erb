@@ -1,1 +1,14 @@
-<h4>We need a form here</h4>
+<div class="container mt-5">
+  <h4>Create a new friends group!</h4>
+        <%= simple_form_for(@group)  do |f| %>
+          <%= f.input :name, label: 'Your group name: ' %>
+          <%= f.input :event_type, :collection => ["Party", "XXL Event", "Boozy Brunch", "Go-With-The-Flow", "Chill & Games"], prompt: "Select your event type" %>
+          <%= f.input :hourly_rate %>
+          <%= f.input :size %>
+          <%= f.input :location %>
+          <%= f.input :description, as: :text, label: 'Describe your group:' %>
+          <%= f.input :availability %>
+          <%= f.submit class: "btn btn-primary" %>
+        <% end %>
+    <br>
+</div>
