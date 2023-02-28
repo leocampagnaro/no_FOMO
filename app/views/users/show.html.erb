@@ -1,2 +1,21 @@
-<h4>Here is your account information</h4>
-<p>Shall we merge it with the dashboard?</p>
+<div class="container">
+  <h2>Welcome back <%= @user.first_name %>!</h2>
+    <div class="account-info">
+      <h4>Account Settings</h4>
+      <p><%= @user.first_name %> <%= @user.last_name%></p>
+      <p><%= @user.email%></p>
+      <p><%= link_to "Update Account Information", edit_user_registration_path %></p>
+    </div>
+    <div class="user-groups">
+      <h4>Your Groups</h4>
+      <% @user.groups.each do |group| %>
+      <p><%= group.name %> -
+      <%= link_to "See", group_path(group) %>
+      <%= link_to "Delete", group_path(group), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>
+      <% end %>
+    </div>
+    <div class="Bookings">
+      <h4>Your Bookings</h4>
+      <p>Booking 1</p>
+    </div>
+</div>

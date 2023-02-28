@@ -163,4 +163,18 @@ group_7.user = user_7
 group_7.save
 puts "Created: #{group_7.name}"
 
+group_8 = Group.create(name: 'Walkers',
+  event_type: 'Go-With-The-Flow',
+  hourly_rate: 20,
+  size: 2,
+  location: 'Berlin',
+  description: 'Lets go for a walk!',
+  availability: true,
+  # photos: URI.parse('https://i.pinimg.com/564x/15/1f/29/151f298d52ce229c8791a415282c00cb.jpg')
+)
+
+group_8.user = user_1
+group_8.save
+puts "Created: #{group_8.name}"
+
 puts "Groups: #{Group.count} created -- Users: #{User.count} created."
