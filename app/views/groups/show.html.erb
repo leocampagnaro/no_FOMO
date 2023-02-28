@@ -32,8 +32,16 @@
       <p>before taxes</p>
       <p>Check-in: 23/04/2022</p>
       <p>Check-out: 24/04/2022</p>
-      <button type="button" class="btn btn-primary">Book now</button>
-    </div>
+      <div class="m-2 p-3">
+      <h5 class="title">Book now an incredible experience with new friends!</h5>
+      <%= simple_form_for [@group, @booking] do |f| %>
+        <%= f.input :date %>
+        <%= f.input :hours_booked %>
+        <%= f.association :group %>
+        <%= f.submit "Book!", class: "btn btn-primary" %>
+      <% end %>
+</div>
+      </div>
 
   </div>
 </div>
