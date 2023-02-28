@@ -38,3 +38,30 @@ _card.scss
   top: -20px;
   width: 40px;
 }
+
+.container-show {
+  background-color: $light-gray;
+}
+
+.pics-container {
+  flex-grow: 1;
+  padding: 10px;
+}
+
+.pics-main {
+  height: 50vh;
+  border-radius: 3px;
+}
+
+.pics-others {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 10px;
+  border-radius: 3px;
+}
+
+.card-info-booking {
+  background-color: white;
+  border-radius: 3px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
