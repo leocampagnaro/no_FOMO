@@ -1,15 +1,32 @@
 1- CSS
 _card.scss
+
+.container-sm {
+  display: flex;
+
+}
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 30px;
+  flex-grow: 1;
+  padding: 15px;
+}
+
 .card {
   overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-position: center;
+  border-radius: 1px;
+  justify-content: space-around;
+  border-radius: 3%;
 }
 
 .card > img {
   height: 200px;
   width: 100%;
-  object-fit: cover;
+  object-fit: fill;
 }
 
 .card h2 {
