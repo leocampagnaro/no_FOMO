@@ -16,6 +16,8 @@
     </div>
     <div class="Bookings">
       <h4>Your Bookings</h4>
-      <p>Booking 1</p>
+      <% @user.bookings.each do |booking| %>
+      <p>Event with: <%= booking.group.name %> - Date: <%= booking.date %> -
+      <% end %>
     </div>
 </div>
