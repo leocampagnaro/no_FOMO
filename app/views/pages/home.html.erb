@@ -1,84 +1,16 @@
 <div class="container-sm">
   <div class="cards">
+    <% @groups.each do |group| %>
       <div class="card m-1">
         <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
         <div class="card-infos">
           <div>
-            <h4><%= @group.name %></h4>
+            <h4><%= link_to group.name, group_path(group) %></h4>
           </div>
-          <h2 class="card-pricing">£99.99</h2>
+          <h2 class="card-pricing"><%= group.hourly_rate %></h2>
           <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-user avatar-bordered" />
         </div>
       </div>
-      <div class="card m-1">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <div class="card-infos">
-          <div>
-            <h4><%= @group.name %></h4>
-          </div>
-          <h2 class="card-pricing">£99.99</h2>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-user avatar-bordered" />
-        </div>
-      </div>
-      <div class="card m-1">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <div class="card-infos">
-          <div>
-            <h4><%= @group.name %></h4>
-          </div>
-          <h2 class="card-pricing">£99.99</h2>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-user avatar-bordered" />
-        </div>
-      </div>
-      <div class="card m-1">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <div class="card-infos">
-          <div>
-            <h4><%= qgroup.name %></h4>
-          </div>
-          <h2 class="card-pricing">£99.99</h2>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-user avatar-bordered" />
-        </div>
-      </div>
-      <div class="card m-1">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <div class="card-infos">
-          <div>
-            <h4><%= @group.name %></h4>
-          </div>
-          <h2 class="card-pricing">£99.99</h2>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-user avatar-bordered" />
-        </div>
-      </div>
-      <div class="card m-1">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <div class="card-infos">
-          <div>
-            <h4><%= qgroup.name %></h4>
-          </div>
-          <h2 class="card-pricing">£99.99</h2>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-user avatar-bordered" />
-        </div>
-      </div>
-      <div class="card m-1">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <div class="card-infos">
-          <div>
-            <h4><%= @group.name %></h4>
-          </div>
-          <h2 class="card-pricing">£99.99</h2>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-user avatar-bordered" />
-        </div>
-      </div>
-      <div class="card m-1">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/greece.jpg" />
-        <div class="card-infos">
-          <div>
-            <h4><%= @group.name %></h4>
-          </div>
-          <h2 class="card-pricing">£99.99</h2>
-          <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-user avatar-bordered" />
-        </div>
-      </div>
-    </div>
+    <% end %>
+  </div>
 </div>

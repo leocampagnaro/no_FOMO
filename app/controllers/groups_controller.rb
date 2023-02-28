@@ -1,5 +1,6 @@
 class GroupsController < ApplicationController
   before_action :set_group, only: ['destroy', 'show']
+  skip_before_action :authenticate_user!, only: :show
 
   def index
     @groups = Group.all
