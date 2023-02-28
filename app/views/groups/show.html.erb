@@ -1,8 +1,8 @@
 <div class="main-container">
-
+<div class="container">
   <div class="card-title">
     <h3><%= @group.name%></h3>
-    <h5><%= @group.event_type %> - <%= @group.location %> <%= @group.location %> - <%= @group.size %></h5>
+    <h5><%= @group.event_type %> - <%= @group.location %> - <%= @group.size %> people</h5>
   </div>
 
   <div class="container-show m-2 p-2">
@@ -22,26 +22,25 @@
   <div class="card-info d-flex">
     <div class="card-info-desc col-sm-7">
       <p><%= @group.description %></p>
-      <p>Free cancellation 48 before the event</p>
       <p>Highly rated group of friends</p>
-      <p>€ <%= @group.hourly_rate %> /h</p>
+      <p>€ <%= @group.hourly_rate %>0/hour</p>
     </div>
 
-    <div class="card-info-booking col-sm-3 p-3">
-      <p>€ <%= @group.hourly_rate*3%> /h</p>
-      <p>before taxes</p>
-      <p>Check-in: 23/04/2022</p>
-      <p>Check-out: 24/04/2022</p>
-      <div class="m-2 p-3">
-      <h5 class="title">Book now an incredible experience with new friends!</h5>
-      <%= simple_form_for [@group, @booking] do |f| %>
-        <%= f.input :date %>
-        <%= f.input :hours_booked %>
-        <%= f.association :group %>
-        <%= f.submit "Book!", class: "btn btn-primary" %>
-      <% end %>
-</div>
+    <div class="card-info-booking">
+      <div class="container">
+        <div class="m-2 p-3">
+          <h4 class="title">Book your experience now:</h4>
+          <%= simple_form_for [@group, @booking] do |f| %>
+            <%= f.input :date, placeholder: "dd/mm/yyyy" %>
+            <%= f.input :hours_booked, label: "Number of Hours", placeholder: "ex. 3" %>
+            <%= f.association :group, default: @group %>
+            <em>*Free cancellation 48 before the event*</em><br><br>
+            <%= f.submit "Book!", class: "btn btn-primary" %>
+          <% end %>
+        </div>
       </div>
+    </div>
 
   </div>
+
 </div>

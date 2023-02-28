@@ -1,1 +1,22 @@
 // Specific CSS for your home-page
+.card-infos a {
+  text-decoration: none;
+}
+
+.card-infos a:hover {
+  color: rgb(94, 94, 94);
+}
+
+.card-infos .group-name {
+  font-size: 20px;
+}
+
+.card-infos .event-type {
+  font-size: 14px;
+}
+
+.card-infos .group-description {
+  font-size: 12px;
+  font-style: italic;
+  color: rgb(83, 83, 83);
+}
