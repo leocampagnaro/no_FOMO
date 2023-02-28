@@ -1,1 +1,41 @@
-<h4>Here is a group!</h4>
+
+<div class="">
+
+  <div class="card-title">
+    <h3><%= @group.name%></h3>
+    <h5><%= @group.event_type %> - <%= @group.location %> <%= @group.location %> - <%= @group.size %></h5>
+  </div>
+
+  <div class="container-show">
+    <div class="pics-container">
+      <div class="pics-main">
+        <img id="main-pic" src="https://img.freepik.com/free-photo/birthday-party-concept-with-three-friends_23-2147720345.jpg?w=2000">
+      </div>
+      <div class="pics-others">
+        <img id="small-pic" src="http://www.freewebs.com/dollsallover/Barbie/W3PartyL1.jpg">
+        <img id="small-pic" src="https://as2.ftcdn.net/v2/jpg/01/36/55/99/1000_F_136559916_gXcqY2ROcjVLh19AQrZ9WTmRZb1rNK7t.jpg">
+        <img id="small-pic" src="https://images.pexels.com/photos/5935232/pexels-photo-5935232.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
+        <img id="small-pic" src="https://img.huffingtonpost.com/asset/5cad29d2240000b900067b77.jpeg?cache=jixnyL9LoA&ops=scalefit_720_noupscale">
+      </div>
+    </div>
+  </div>
+
+  <div class="card-info">
+    <div class="card-info-desc col-sm-5">
+      <p><%= @group.description %></p>
+      <p>Free cancellation 48 before the event</p>
+      <p>Highly rated group of friends</p>
+      <p>€ <%= @group.hourly_rate %> /h</p>
+    </div>
+
+    <div class="card-info-booking col-sm-5">
+      <p>€ <%= @group.hourly_rate*3%> /h</p>
+      <p>before taxes</p>
+      <p>Check-in:</p>
+      <p>Check-out:</p>
+      <button type="button" class="btn btn-primary">Book now</button>
+    </div>
+
+  </div>
+
+</div>
