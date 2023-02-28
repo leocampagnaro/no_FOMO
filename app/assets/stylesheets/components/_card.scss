@@ -39,18 +39,34 @@ _card.scss
   width: 40px;
 }
 
+.main-container {
+  padding: 8px;
+  margin: 20px;
+  align-items: center;
+
+}
+
 .container-show {
   background-color: $light-gray;
 }
 
 .pics-container {
   flex-grow: 1;
-  padding: 10px;
+  padding: 8px;
+  display: flex;
 }
 
 .pics-main {
-  height: 50vh;
+  // height: 100px;
+  // width: 50px;
+  // border-radius: 3px;
+}
+
+#main-pic{
+  height: 450px;
+  width: 600px;
   border-radius: 3px;
+  box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
 .pics-others {
@@ -58,10 +74,30 @@ _card.scss
   grid-template-columns: 1fr 1fr;
   grid-gap: 10px;
   border-radius: 3px;
+  padding: 8px;
 }
 
 .card-info-booking {
   background-color: white;
   border-radius: 3px;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.2);
+  align-items: center;
+}
+
+#small-pic {
+  height: 220px;
+  width: 250px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.card-info {
+  flex-grow: 1;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+
 }
