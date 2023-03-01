@@ -4,10 +4,10 @@
 }
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 25px;
   flex-grow: 1;
-  padding: 15px;
+  padding: 12px;
 }
 
 .card {
