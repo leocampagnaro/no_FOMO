@@ -7,6 +7,7 @@
           <%= f.input :size %>
           <%= f.input :location %>
           <%= f.input :description, as: :text, label: 'Describe your group:' %>
+          <%= f.input :photos, as: :file, input_html: { multiple: true } %>
           <%= f.input :availability %>
           <%= f.submit class: "btn btn-primary" %>
         <% end %>

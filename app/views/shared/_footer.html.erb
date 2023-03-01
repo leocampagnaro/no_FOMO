@@ -5,7 +5,9 @@
     <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
     <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
   </div>
-  <div class="footer-copyright">
-    No-FOMO <i class="fa-solid fa-user-group"></i> 2023
-  </div>
+  <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
+    <div class="footer-copyright">
+      No-FOMO <i class="fa-solid fa-user-group"></i> 2023
+    </div>
+  <% end %>
 </div>

@@ -5,7 +5,8 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
-# require "open-uri"
+require "open-uri"
+
 
 group_1 = Group.create(name: 'The 3 Brunch-keteers',
   event_type: 'Boozy Brunch',
@@ -20,6 +21,9 @@ user_1 = User.create(email: Faker::Internet.email,
   first_name: "Matthew",
   last_name: Faker::Name.last_name,
   password: '123456')
+
+file = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677612213/no_fomo/__8_l9lwn3.jpg")
+user_1.photo.attach(io: file, filename: ".jpg", content_type: "image/jpg")
 
 group_1.user = user_1
 group_1.save
