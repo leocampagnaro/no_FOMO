@@ -13,9 +13,11 @@
   padding: 0px 50px;
   background-color: $blue;
 }
+
 .footer-links {
   align-items: center;
 }
+
 .footer-links a {
   color: $yellow;
   opacity: 0.4;
@@ -23,6 +25,7 @@
   font-size: 24px;
   padding: 0px 10px;
 }
+
 .footer-links a:hover {
   opacity: 1;
 }
