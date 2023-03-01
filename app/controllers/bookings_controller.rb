@@ -20,12 +20,13 @@ class BookingsController < ApplicationController
 
   def destroy
     @booking.destroy
+    redirect_to user_path(current_user)
   end
 
   private
 
   def set_booking
-    @booking = booking.find(params[:user_id])
+    @booking = Booking.find(params[:id])
   end
 
   def set_user
