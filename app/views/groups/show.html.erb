@@ -29,11 +29,10 @@
     <div class="card-info-booking">
       <div class="container">
         <div class="m-2 p-3">
-          <h4 class="title">Book your experience now:</h4>
+          <h4 class="title">Book your experience with:<br><%= @group.name %></h4>
           <%= simple_form_for [@group, @booking] do |f| %>
             <%= f.input :date, placeholder: "dd/mm/yyyy" %>
             <%= f.input :hours_booked, label: "Number of Hours", placeholder: "ex. 3" %>
-            <%= f.association :group, default: @group %>
             <em>*Free cancellation 48 before the event*</em><br><br>
             <%= f.submit "Book!", class: "btn btn-primary" %>
           <% end %>
