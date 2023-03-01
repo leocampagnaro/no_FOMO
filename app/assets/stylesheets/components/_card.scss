@@ -57,7 +57,6 @@
   padding: 8px;
   margin: 20px;
   align-items: center;
-
 }
 
 .container-show {
@@ -76,7 +75,7 @@
   // border-radius: 3px;
 }
 
-#main-pic{
+#main-pic {
   height: 450px;
   width: 600px;
   border-radius: 3px;
@@ -108,10 +107,87 @@
   box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
-.card-info {
+.container-show-user {
+  margin: 100px;
+  display: flex;
+}
+
+.card-user-info {
   flex-grow: 1;
   padding: 10px;
   display: flex;
   align-items: center;
-
 }
+
+.card-user {
+  height: 300px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 30px;
+  display: flex;
+  padding: 50px;
+}
+
+.card-user h2 {
+  font-size: 25px;
+}
+
+.card-user p {
+  font-size: 16px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 12px;
+  margin-top: 8px;
+  margin-left: 8px;
+}
+
+.card-user .card-user-infos {
+  margin-left: 8px;
+}
+
+.card-user img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex-basis: 100%;
+  flex: 1;
+}
+
+.card-user-account-infos {
+  font-size: 16px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 12px;
+  margin-top: 8px;
+  margin-left: 8px;
+}
+
+.card-user-account-infos img {
+  height: 100%;
+  width: 120px;
+  object-fit: cover;
+}
+
+.card-user-account-infos p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+}
+
+// .card-product .card-product-infos {
+//   padding: 16px;
+// }
