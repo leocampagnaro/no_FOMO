@@ -5,7 +5,7 @@
   <div class="row">
     <div class="column">
       <div class="column-1">
-          <div class="card-user">
+          <div class="card-user-show">
             <div class="card-user-account-infos">
             <%# <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" /> %>
             <%# <img src="..." class="card-img-top" alt="..."> %>
@@ -22,8 +22,8 @@
     <div class="row">
       <div class="column">
         <div class="column-2">
-          <div class="card-user">
-            <div class="card-user-infos">
+          <div class="card-user-show">
+            <div class="card-user-show-infos">
               <h2>Your Groups</h2>
               <% @user.groups.each do |group| %>
               <p><%= group.name %> -
@@ -32,8 +32,8 @@
               <% end %>
             </div>
           </div>
-          <div class="card-user">
-            <div class="card-user-infos">
+          <div class="card-user-show">
+            <div class="card-user-show-infos">
               <h2>Your Bookings</h2>
               <% @user.bookings.each do |booking| %>
               <p>Event with: <%= booking.group.name %> - Date: <%= booking.date %> - <%= link_to "Delete", booking, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></p>

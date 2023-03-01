@@ -112,14 +112,14 @@
   display: flex;
 }
 
-.card-user-info {
+.card-user-show-info {
   flex-grow: 1;
   padding: 10px;
   display: flex;
   align-items: center;
 }
 
-.card-user {
+.card-user-show {
   height: 300px;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
@@ -128,11 +128,11 @@
   padding: 50px;
 }
 
-.card-user h2 {
+.card-user-show h2 {
   font-size: 25px;
 }
 
-.card-user p {
+.card-user-show p {
   font-size: 16px;
   line-height: 1.4;
   opacity: .7;
@@ -141,14 +141,8 @@
   margin-left: 8px;
 }
 
-.card-user .card-user-infos {
+.card-user-show .card-user-show-infos {
   margin-left: 8px;
-}
-
-.card-user img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
 }
 
 .row {
@@ -174,11 +168,11 @@
   margin-left: 8px;
 }
 
-.card-user-account-infos img {
-  height: 100%;
-  width: 120px;
-  object-fit: cover;
-}
+// .card-user-account-infos img {
+//   height: 100%;
+//   width: 120px;
+//   object-fit: cover;
+// }
 
 .card-user-account-infos p {
   font-size: 12px;
