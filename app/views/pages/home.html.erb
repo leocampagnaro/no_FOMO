@@ -3,7 +3,7 @@
     <% @groups.each do |group| %>
       <div class="card m-1">
       <% if group.photos.attached? %>
-      <img <%= cl_image_tag group.photos[0].key %>/>
+        <%= cl_image_tag group.photos.first.key %>
       <% else %>
         <img src="https://source.unsplash.com/collection/2706932/" />
       <% end %>
