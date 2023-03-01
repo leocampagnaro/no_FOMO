@@ -26,7 +26,7 @@ class GroupsController < ApplicationController
 
   def destroy
     @group.destroy
-    redirect_to user_path(user)
+    redirect_to user_path(current_user)
   end
 
   private
