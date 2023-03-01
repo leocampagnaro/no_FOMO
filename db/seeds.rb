@@ -7,7 +7,6 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "open-uri"
 
-
 group_1 = Group.create(name: 'The 3 Brunch-keteers',
   event_type: 'Boozy Brunch',
   hourly_rate: 15,
@@ -22,8 +21,10 @@ user_1 = User.create(email: Faker::Internet.email,
   last_name: Faker::Name.last_name,
   password: '123456')
 
-file = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677612213/no_fomo/__8_l9lwn3.jpg")
-user_1.photo.attach(io: file, filename: ".jpg", content_type: "image/jpg")
+avatar_1 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677612213/no_fomo/__8_l9lwn3.jpg")
+user_1.photo.attach(io: avatar_1, filename: ".jpg", content_type: "image/jpg")
+file_1 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677611752/no_fomo/Group_of_friends_eating_burger_on_mountain_top_p4gkry.jpg")
+group_1.photos.attach(io: file_1, filename: ".jpg", content_type: "image/jpg")
 
 group_1.user = user_1
 group_1.save
@@ -43,6 +44,8 @@ user_2 = User.create(email: Faker::Internet.email,
   last_name: Faker::Name.last_name,
   password: '123456')
 
+file_2 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677611365/no_fomo/__3_ayndin.jpg")
+group_2.photos.attach(io: file_2, filename: ".jpg", content_type: "image/jpg")
 group_2.user = user_2
 group_2.save
 puts "Created: #{group_2.name}"
@@ -63,6 +66,8 @@ user_3 = User.create(email: Faker::Internet.email,
   last_name: Faker::Name.last_name,
   password: '123456')
 
+file_3 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677611433/no_fomo/__5_lixqca.jpg")
+group_3.photos.attach(io: file_3, filename: ".jpg", content_type: "image/jpg")
 group_3.user = user_3
 group_3.save
 puts "Created: #{group_3.name}"
@@ -81,6 +86,8 @@ user_4 = User.create(email: Faker::Internet.email,
   last_name: Faker::Name.last_name,
   password: '123456')
 
+file_4 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677611360/no_fomo/__12cs___textfic___L_espoir_vlhbww.jpg")
+group_4.photos.attach(io: file_4, filename: ".jpg", content_type: "image/jpg")
 group_4.user = user_4
 group_4.save
 puts "Created: #{group_4.name}"
@@ -98,6 +105,8 @@ user_5 = User.create(email: Faker::Internet.email,
   last_name: Faker::Name.last_name,
   password: '123456')
 
+file_5 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677611471/no_fomo/__7_li4ius.jpg")
+group_5.photos.attach(io: file_5, filename: ".jpg", content_type: "image/jpg")
 group_5.user = user_5
 group_5.save
 puts "Created: #{group_5.name}"
@@ -118,6 +127,8 @@ user_6 = User.create(email: Faker::Internet.email,
   last_name: Faker::Name.last_name,
   password: '123456')
 
+file_6 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677682496/Board_in_the_Library_Part_Six__Board_Game_Night_Basics_bbldwe.jpg")
+group_6.photos.attach(io: file_6, filename: ".jpg", content_type: "image/jpg")
 group_6.user = user_6
 group_6.save
 puts "Created: #{group_6.name}"
@@ -136,6 +147,8 @@ user_7 = User.create(email: Faker::Internet.email,
   last_name: Faker::Name.last_name,
   password: '123456')
 
+file_7 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677611363/no_fomo/We_Found_the_Most_Instagrammed_Brunch_in_LA_ugbd5e.jpg")
+group_7.photos.attach(io: file_7, filename: ".jpg", content_type: "image/jpg")
 group_7.user = user_7
 group_7.save
 puts "Created: #{group_7.name}"
@@ -148,6 +161,8 @@ group_8 = Group.create(name: 'Walkers',
   description: 'Lets go for a walk!',
   availability: true)
 
+file_8 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677611435/no_fomo/Sommer_rtbepz.jpg")
+group_8.photos.attach(io: file_8, filename: ".jpg", content_type: "image/jpg")
 group_8.user = user_1
 group_8.save
 puts "Created: #{group_8.name}"
