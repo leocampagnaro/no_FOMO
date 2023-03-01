@@ -2,7 +2,11 @@
   <div class="cards">
     <% @groups.each do |group| %>
       <div class="card m-1">
+      <% if group.photos.attached? %>
+      <img <%= cl_image_tag group.photos[0].key %>/>
+      <% else %>
         <img src="https://source.unsplash.com/collection/2706932/" />
+      <% end %>
         <div class="card-infos">
           <div>
             <h4 class="group-name"><%= link_to group.name, group_path(group) %></h4>
