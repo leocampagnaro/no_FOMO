@@ -1,5 +1,5 @@
 class BookingsController < ApplicationController
-  before_action :set_booking, only: ['destroy']
+  before_action :set_booking, only: ['destroy', 'edit', 'update']
   before_action :set_user, only: ['new', 'create']
 
   def new
@@ -16,6 +16,14 @@ class BookingsController < ApplicationController
     else
       render new
     end
+  end
+
+  def edit
+  end
+
+  def update
+    @booking.update(booking_params)
+    redirect_to user_path(current_user)
   end
 
   def destroy

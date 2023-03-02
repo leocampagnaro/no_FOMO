@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_user, only: ['edit', 'update', 'show']
+  before_action :set_booking, only: ['edit']
 
   def show
     @user = User.find(params[:id])
@@ -19,6 +20,9 @@ class UsersController < ApplicationController
     @user = current_user
   end
 
+  def set_booking
+    @booking = Booking.find(params[:booking_id])
+  end
 
   def user_params
     params.require(:user).permit(:first_name, :last_name, :photo, :email, :encrypted_password)
