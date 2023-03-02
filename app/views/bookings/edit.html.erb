@@ -2,11 +2,11 @@
   <h3>⚡️ Leave a review for <strong><%= @booking.group.name %></strong> :</h3>
   <%= simple_form_for [@group, @booking] do |f| %>
     <br>
-    <%= f.input :review, label: false, placeholder: "Your review here..."%>
+    <br>
+    <%= f.input :review, label: false, placeholder: "Your review here...", required: true%>
+    <br>
+    <%= f.input :rating, label: "Rating /5", :collection => 1..5, required: true%>
     <%= f.submit "Submit", class: "btn btn-primary" %>
   <% end %>
-<br>
-<br>
-<br>
 <br>
 </div>

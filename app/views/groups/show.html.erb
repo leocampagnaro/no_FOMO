@@ -46,7 +46,6 @@
       <div class="card-info-desc col-sm-7 mx-auto">
         <p class="text-justify"><%= @group.description %></p><br>
         <p>€ <strong><%= @group.hourly_rate %>0 </strong>/ hour</p><br><br><br><br><br><br><br><br>
-        <i>Highly rated group of friends</i>
       </div>
 
       <div class="card-info-booking mx-auto">
@@ -65,14 +64,30 @@
   </div>
 
   <hr class="hr m-4" />
+    <div class="container">
+      <div class="p-3">
+      <h5>Group Reviews :</h5>
+      <p><% @group.bookings.each do |booking| %></p>
+        <% if booking.review != nil%>
+          <% booking.rating.to_i.times do %>
+            ⭐️
+          <% end %> : &nbsp;
+          <%=  booking.review %>
+        <% end  %>
+      <% end  %>
+      </div>
+    </div>
+  <hr class="hr m-4" />
 
-  <div>
+  <div class="container">
+    <div class="p-3">
     <h5>Hosted by <%= @group.user.first_name %> <%= @group.user.last_name %> </h5><br>
     <% if @group.user.photo.attached? %>
       <%= cl_image_tag @group.user.photo.key, class: "avatar-bordered-bigger" %> &nbsp;&nbsp; <%= "Joined No FOMO in #{rand(2019..2023)}" %>
     <% else %>
       <img class="avatar-bordered-bigger" src="https://source.unsplash.com/collection/50580326/"> &nbsp;&nbsp; <%= "Joined No FOMO in #{rand(2019..2023)}" %>
     <% end %>
+    </div>
   </div>
 
 </div>
