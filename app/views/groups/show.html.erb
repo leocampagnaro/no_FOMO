@@ -1,45 +1,78 @@
 <div class="main-container">
-<div class="container">
-  <div class="card-title">
-    <h3><%= @group.name%></h3>
-    <h5><%= @group.event_type %> - <%= @group.location %> - <%= @group.size %> people</h5>
+  <div class="container">
+    <div class="card-title">
+      <h3><%= @group.name%></h3>
+      <h5><%= @group.event_type %> - <%= @group.location %> - <%= @group.size %> people</h5>
   </div>
 
-  <div class="container-show m-2 p-2">
-    <div class="pics-container m-1 col-sm-5 p-2">
+  <div class="d-flex justify-content-between container-show m-2 p-2">
+    <div class="pics-container m-3 col-sm-5 p-1">
       <div class="pics-main m-2">
-        <img id="main-pic" src="https://img.freepik.com/free-photo/birthday-party-concept-with-three-friends_23-2147720345.jpg?w=2000">
+        <% if @group.photos.attached? %>
+          <%= cl_image_tag @group.photos.first.key, id: "main-pic" %>
+        <% else %>
+          <img id="main-pic" src="https://source.unsplash.com/collection/50580326/">
+        <% end %>
       </div>
       <div class="pics-others col-sm-5">
-        <img id="small-pic" src="http://www.freewebs.com/dollsallover/Barbie/W3PartyL1.jpg">
-        <img id="small-pic" src="https://as2.ftcdn.net/v2/jpg/01/36/55/99/1000_F_136559916_gXcqY2ROcjVLh19AQrZ9WTmRZb1rNK7t.jpg">
-        <img id="small-pic" src="https://images.pexels.com/photos/5935232/pexels-photo-5935232.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500">
-        <img id="small-pic" src="https://img.huffingtonpost.com/asset/5cad29d2240000b900067b77.jpeg?cache=jixnyL9LoA&ops=scalefit_720_noupscale">
+        <% if @group.photos.length > 1 %>
+          <%= cl_image_tag @group.photos[1].key, id: "small-pic" %>
+        <% else %>
+          <img id="small-pic" src="https://source.unsplash.com/collection/50580326/">
+        <% end %>
+
+        <% if @group.photos.length > 2 %>
+          <%= cl_image_tag @group.photos[2].key, id: "small-pic" %>
+        <% else %>
+          <img id="small-pic" src="https://source.unsplash.com/collection/1709828/">
+        <% end %>
+
+        <% if @group.photos.length > 3 %>
+          <%= cl_image_tag @group.photos[3].key, id: "small-pic" %>
+        <% else %>
+          <img id="small-pic" src="https://source.unsplash.com/collection/28562203/">
+        <% end %>
+
+        <% if @group.photos.length > 4 %>
+          <%= cl_image_tag @group.photos[4].key, id: "small-pic" %>
+        <% else %>
+          <img id="small-pic" src="https://source.unsplash.com/collection/2318207/">
+        <% end %>
       </div>
     </div>
   </div>
+    <hr class="hr m-4" />
+    <div class="card-info d-flex justify-content-sm-between">
+      <div class="card-info-desc col-sm-7 mx-auto">
+        <p class="text-justify"><%= @group.description %></p><br>
+        <p>€ <strong><%= @group.hourly_rate %>0 </strong>/ hour</p><br><br><br><br><br><br><br><br>
+        <i>Highly rated group of friends</i>
+      </div>
 
-  <div class="card-info d-flex">
-    <div class="card-info-desc col-sm-7">
-      <p><%= @group.description %></p>
-      <p>Highly rated group of friends</p>
-      <p>€ <%= @group.hourly_rate %>0/hour</p>
-    </div>
-
-    <div class="card-info-booking">
-      <div class="container">
-        <div class="m-2 p-3">
-          <h4 class="title">Book your experience with:<br><%= @group.name %></h4>
-          <%= simple_form_for [@group, @booking] do |f| %>
-            <%= f.input :date, placeholder: "dd/mm/yyyy" %>
-            <%= f.input :hours_booked, label: "Number of Hours", placeholder: "ex. 3" %>
-            <em>*Free cancellation 48 before the event*</em><br><br>
-            <%= f.submit "Book!", class: "btn btn-primary" %>
+      <div class="card-info-booking mx-auto">
+        <div class="container">
+          <div class="p-3">
+            <h5 class="title">Book your experience with:<br><%= @group.name %></h5><br>
+            <%= simple_form_for [@group, @booking] do |f| %>
+              <%= f.input :date, placeholder: "dd/mm/yyyy" %>
+              <%= f.input :hours_booked, label: "Number of Hours", placeholder: "ex. 3" %>
+              <em>*Free cancellation 48 before the event*</em><br><br>
+              <%= f.submit "Book!", class: "btn btn-primary" %>
           <% end %>
         </div>
       </div>
     </div>
+  </div>
 
+  <hr class="hr m-4" />
+
+  <div>
+    <h5>Hosted by <%= @group.user.first_name %> <%= @group.user.last_name %> </h5><br>
+    <% if @group.user.photo.attached? %>
+      <%= cl_image_tag @group.user.photo.key, class: "avatar-bordered-bigger" %> &nbsp;&nbsp; <%= "Joined No FOMO in #{rand(2019..2023)}" %>
+    <% else %>
+      <img class="avatar-bordered-bigger" src="https://source.unsplash.com/collection/50580326/"> &nbsp;&nbsp; <%= "Joined No FOMO in #{rand(2019..2023)}" %>
+    <% end %>
   </div>
 
 </div>
