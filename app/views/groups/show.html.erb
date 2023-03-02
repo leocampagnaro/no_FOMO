@@ -52,10 +52,11 @@
         <div class="container">
           <div class="p-3">
             <h5 class="title">Book your experience with:<br><%= @group.name %></h5><br>
-            <%= simple_form_for [@group, @booking] do |f| %>
-              <%= f.input :date, placeholder: "dd/mm/yyyy" %>
+            <%= simple_form_for [@group, @booking], data: { controller: 'flatpickr' } do |f| %>
+              <%= f.input :date, placeholder: "March 3, 2023",
+                input_html: { data: { flatpickr_target: "date" } } %>
               <%= f.input :hours_booked, label: "Number of Hours", placeholder: "ex. 3" %>
-              <em>*Free cancellation 48 before the event*</em><br><br>
+              <em>*Free cancellation 48 hours before the event*</em><br><br>
               <%= f.submit "Book!", class: "btn btn-primary" %>
           <% end %>
         </div>
