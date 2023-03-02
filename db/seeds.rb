@@ -21,7 +21,7 @@ user_1 = User.create(email: Faker::Internet.email,
   last_name: Faker::Name.last_name,
   password: '123456')
 
-avatar_1 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677612213/no_fomo/__8_l9lwn3.jpg")
+avatar_1 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677229590/cld-sample.jpg")
 user_1.photo.attach(io: avatar_1, filename: ".jpg", content_type: "image/jpg")
 file_1 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677611752/no_fomo/Group_of_friends_eating_burger_on_mountain_top_p4gkry.jpg")
 group_1.photos.attach(io: file_1, filename: ".jpg", content_type: "image/jpg")
@@ -127,7 +127,7 @@ user_6 = User.create(email: Faker::Internet.email,
   last_name: Faker::Name.last_name,
   password: '123456')
 
-file_6 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677682496/Board_in_the_Library_Part_Six__Board_Game_Night_Basics_bbldwe.jpg")
+file_6 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677752045/Board_in_the_Library_Part_Six__Board_Game_Night_Basics_1_gjqv5l.jpg")
 group_6.photos.attach(io: file_6, filename: ".jpg", content_type: "image/jpg")
 group_6.user = user_6
 group_6.save
@@ -166,12 +166,64 @@ group_8.photos.attach(io: file_8, filename: ".jpg", content_type: "image/jpg")
 group_8.user = user_1
 group_8.save
 puts "Created: #{group_8.name}"
-puts "Groups: #{Group.count} created -- Users: #{User.count} created."
 
-booking_1 = Booking.create(
-  date: "24/04/2023",
-  hours_booked: 3)
-booking_1.user = user_1
-booking_1.group = group_1
-booking_1.save
-puts "Created: #{booking_1.date}"
+group_9 = Group.create(name: 'The Wedding Crashers',
+  event_type: 'XXL Event',
+  hourly_rate: 300,
+  size: 55,
+  location: 'Munich',
+  description: 'If you need some cool people at your wedding - call us.',
+  availability: true)
+
+user_9 = User.create(email: Faker::Internet.email,
+  first_name: "Victor",
+  last_name: Faker::Name.last_name,
+  password: '123456')
+
+avatar_9 = URI.open("https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80.jpg")
+user_9.photo.attach(io: avatar_9, filename: ".jpg", content_type: "image/jpg")
+file_9 = URI.open("https://images.unsplash.com/photo-1560439514-4e9645039924?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")
+group_9.photos.attach(io: file_9, filename: ".jpg", content_type: "image/jpg")
+
+group_9.user = user_9
+group_9.save
+puts "Created: #{group_9.name}"
+
+group_10 = Group.create(name: 'Friends 4 Life',
+  event_type: 'Go-With-The-Flow',
+  hourly_rate: 25,
+  size: 3,
+  location: 'Hamburg',
+  description: "You've been looking for friends? Well you've found them!",
+  availability: true)
+
+  file_10 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677611435/no_fomo/Sommer_rtbepz.jpg")
+  group_10.photos.attach(io: file_10, filename: ".jpg", content_type: "image/jpg")
+  group_10.user = user_1
+  group_10.save
+  puts "Created: #{group_10.name}"
+  puts "Groups: #{Group.count} created -- Users: #{User.count} created."
+
+  booking_1 = Booking.create(
+    date: "24/04/2023",
+    hours_booked: 3)
+    booking_1.user = user_1
+  booking_1.group = group_1
+  booking_1.save
+  puts "Created: #{booking_1.date}"
+
+  booking_2 = Booking.create(
+    date: "21/03/2023",
+    hours_booked: 2)
+    booking_2.user = user_2
+  booking_2.group = group_2
+  booking_2.save
+  puts "Created: #{booking_2.date}"
+
+  booking_3 = Booking.create(
+    date: "21/03/2023",
+    hours_booked: 2)
+    booking_3.user = user_3
+  booking_2.group = group_2
+  booking_2.save
+  puts "Created: #{booking_2.date}"
