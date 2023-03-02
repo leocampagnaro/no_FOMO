@@ -12,10 +12,13 @@
 
   <body>
     <div class="page-container">
-    <div class="navbar-container">
-      <%= render "shared/navbar" %>
-    </div>
+      <div class="navbar-container">
+        <%= render "shared/navbar" %>
+      </div>
+
     <div style="height: 100px"></div>
+
+    <div class="searchbar-container"><%= render "shared/searchbar" %></div>
 
       <div class="container">
         <%= yield %>

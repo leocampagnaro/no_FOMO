@@ -4,6 +4,11 @@ class GroupsController < ApplicationController
 
   def index
     @groups = Group.all
+
+    user_query = params[:query]
+    if user_query.present?
+      @groups = @groups.search_by_name_and_event_type(user_query)
+    end
   end
 
   def new
