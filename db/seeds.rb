@@ -21,7 +21,7 @@ user_1 = User.create(email: Faker::Internet.email,
   last_name: Faker::Name.last_name,
   password: '123456')
 
-avatar_1 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677612213/no_fomo/__8_l9lwn3.jpg")
+avatar_1 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677229590/cld-sample.jpg")
 user_1.photo.attach(io: avatar_1, filename: ".jpg", content_type: "image/jpg")
 file_1 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677611752/no_fomo/Group_of_friends_eating_burger_on_mountain_top_p4gkry.jpg")
 group_1.photos.attach(io: file_1, filename: ".jpg", content_type: "image/jpg")
@@ -127,7 +127,7 @@ user_6 = User.create(email: Faker::Internet.email,
   last_name: Faker::Name.last_name,
   password: '123456')
 
-file_6 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677682496/Board_in_the_Library_Part_Six__Board_Game_Night_Basics_bbldwe.jpg")
+file_6 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677752045/Board_in_the_Library_Part_Six__Board_Game_Night_Basics_1_gjqv5l.jpg")
 group_6.photos.attach(io: file_6, filename: ".jpg", content_type: "image/jpg")
 group_6.user = user_6
 group_6.save
