@@ -29,6 +29,18 @@
   border-radius: 3%;
 }
 
+.card:hover {
+  transition: 0.5s;
+  transform: translate3D(0,-1px,0) scale(1.02);
+  overflow: hidden;
+  background: rgb(220, 220, 220);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-position: center;
+  border-radius: 2px;
+  justify-content: space-around;
+  border-radius: 3%;
+}
+
 .card > img {
   height: 200px;
   width: 100%;

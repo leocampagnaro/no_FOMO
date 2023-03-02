@@ -2,22 +2,28 @@
   <div class="container-sm">
     <div class="cards">
       <% @groups.each do |group| %>
-        <div class="card m-1">
-        <% if group.photos.attached? %>
-        <%= cl_image_tag group.photos[0].key %>
-        <% else %>
-          <img src="https://source.unsplash.com/collection/2706932/"/>
-        <% end %>
+      <%= link_to group_path(group), class:"text-decoration-none" do  %>
+          <div class="card m-1">
+          <% if group.photos.attached? %>
+          <%= cl_image_tag group.photos[0].key %>
+          <% else %>
+            <img src="https://source.unsplash.com/collection/2706932/"/>
+          <% end %>
           <div class="card-infos">
             <div>
-              <h4 class="group-name"><%= link_to group.name, group_path(group) %></h4>
+              <h4 class="group-name"><%=group.name%></h4>
               <p class="event-type"><%= group.event_type %></p>
               <p class="group-description"><%= group.location%>  -  <%= group.size%> people</p>
             </div>
             <h2 class="card-pricing">€<%= group.hourly_rate.round %>/hour</h2>
-            <img src="https://kitt.lewagon.com/placeholder/users/krokrob" class="card-user avatar-bordered" />
+            <% if group.user.photo.attached? %>
+              <%= cl_image_tag group.user.photo.key, class: "card-user avatar-bordered"%>
+            <% else %>
+              <img src="https://source.unsplash.com/collection/gzUGvqgKHn0/" class="card-user avatar-bordered" />
+            <% end %>
           </div>
         </div>
+        <% end %>
       <% end %>
     </div>
   </div>
