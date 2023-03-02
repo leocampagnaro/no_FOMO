@@ -1,0 +1,12 @@
+<div class="container m-2">
+  <h3>⚡️ Leave a review for <strong><%= @booking.group.name %></strong> :</h3>
+  <%= simple_form_for [@group, @booking] do |f| %>
+    <br>
+    <%= f.input :review, label: false, placeholder: "Your review here..."%>
+    <%= f.submit "Submit", class: "btn btn-primary" %>
+  <% end %>
+<br>
+<br>
+<br>
+<br>
+</div>

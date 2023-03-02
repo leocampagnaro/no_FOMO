@@ -8,7 +8,7 @@
       <div class="column-1">
           <div class="card-user-show justify-content-center">
             <div class="card-user-account-infos text-center">
-              <%= cl_image_tag current_user.photo.key, id: "small-pic" %><br>
+              <%= cl_image_tag @user.photo.key, id: "small-pic" %><br>
                 <h2>Account Settings</h2>
                 <p><strong> Name : </strong><%= @user.first_name %> <%= @user.last_name%></p>
                 <p><strong> Email : </strong><%= @user.email%></p><br>
@@ -26,7 +26,7 @@
               <h2>Your Groups</h2>
               <% @user.groups.each do |group| %>
               <ul><li><%= group.name %> - <%= group.size %> people - <%= group.event_type %><br>
-              <button-user class="btn btn-light"><%= link_to "Details", group_path(group) %></button-user>
+              <button-user class="btn btn-light"><%= link_to "See Group", group_path(group) %></button-user>
               <button-user class="btn btn-light"><%= link_to "Delete", group_path(group), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button-user>
               </li></ul>
               <% end %>
@@ -38,7 +38,7 @@
               <% @user.bookings.each do |booking| %>
               <ul><li><%= booking.group.event_type %> - <%= booking.group.name %> - <%= booking.date %><br>
               <button-user class="btn btn-light"><%= link_to "See Group", group_path(booking.group.id) %></button-user>
-              <button-user class="btn btn-light"><%= link_to "Review", group_path(booking.group.id) %></button-user>
+              <button-user class="btn btn-light"><%= link_to "Review",  edit_booking_path(booking.id) %></button-user>
               <button-user class="btn btn-light"><%= link_to "Cancel", booking, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button-user>
               </li></ul>
               <% end %>
