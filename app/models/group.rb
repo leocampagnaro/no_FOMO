@@ -7,4 +7,11 @@ class Group < ApplicationRecord
   validates :size, numericality: { only_integer: true, message: 'Not a vlid size (should be an integer)' }
   validates :size, inclusion: { in: (2..100), message: 'Not a valid size (should be between 2 and 100)' }
   validates :hourly_rate, numericality: { greater_than: 0, message: 'You are worth more than 0 eur' }
+
+  include PgSearch::Model
+  pg_search_scope :search_by_name_and_event_type,
+  against: [ :name, :event_type ],
+  using: {
+    tsearch:{ prefix: true }
+  }
 end

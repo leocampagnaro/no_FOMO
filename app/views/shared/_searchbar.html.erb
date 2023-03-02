@@ -1,0 +1,15 @@
+<div class="container-searchbar d-flex justify-content-center">
+  <div class="d-row w-50">
+    <div class="">
+      <div class="searchbar">
+        <%= form_with url: groups_path, method: :get, class: "d-flex" do %>
+          <%= text_field_tag :query,
+                  params[:query],
+                  class: "form-control",
+                  placeholder: "Find a group.." %>
+          <%= submit_tag "Search", class: "btn btn-primary" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
