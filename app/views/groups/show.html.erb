@@ -75,7 +75,7 @@
             <%= simple_form_for [@group, @booking], data: { controller: 'flatpickr' } do |f| %>
               <%= f.input :date, placeholder: "March 3, 2023",
                 input_html: { data: { flatpickr_target: "date" } } %>
-              <%= f.input :hours_booked, label: "Number of Hours", placeholder: "ex. 3" %>
+              <%= f.input :hours_booked, label: "Number of Hours", :collection => 1..24, placeholder: "ex. 3" %>
               <em>*Free cancellation 48 hours before the event*</em><br><br>
               <%= f.submit "Book!", class: "btn btn-primary" %>
           <% end %>
