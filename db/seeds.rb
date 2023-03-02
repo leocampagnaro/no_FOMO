@@ -7,6 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 require "open-uri"
 
+# groups
+
 group_1 = Group.create(name: 'The 3 Brunch-keteers',
   event_type: 'Boozy Brunch',
   hourly_rate: 15,
@@ -182,7 +184,7 @@ user_9 = User.create(email: Faker::Internet.email,
 
 avatar_9 = URI.open("https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80.jpg")
 user_9.photo.attach(io: avatar_9, filename: ".jpg", content_type: "image/jpg")
-file_9 = URI.open("https://images.unsplash.com/photo-1560439514-4e9645039924?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80")
+file_9 = URI.open("https://images.unsplash.com/photo-1560439514-4e9645039924?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80.jpg")
 group_9.photos.attach(io: file_9, filename: ".jpg", content_type: "image/jpg")
 
 group_9.user = user_9
@@ -197,33 +199,93 @@ group_10 = Group.create(name: 'Friends 4 Life',
   description: "You've been looking for friends? Well you've found them!",
   availability: true)
 
-  file_10 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677611435/no_fomo/Sommer_rtbepz.jpg")
+user_10 = User.create(email: Faker::Internet.email,
+  first_name: "Alice",
+  last_name: Faker::Name.last_name,
+  password: '123456')
+
+file_10 = URI.open("https://images.unsplash.com/photo-1470784790053-6c2f15489967?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=859&q=80.jpg")
   group_10.photos.attach(io: file_10, filename: ".jpg", content_type: "image/jpg")
-  group_10.user = user_1
+  group_10.user = user_10
   group_10.save
   puts "Created: #{group_10.name}"
+
+avatar_10 = URI.open("https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80.jpg")
+  user_10.photo.attach(io: avatar_10, filename: ".jpg", content_type: "image/jpg")
+
+  group_10.user = user_10
+  group_10.save
+  puts "Created: #{group_10.name}"
+
+group_11 = Group.create(name: 'Fancy Party Friends',
+  event_type: 'Party',
+  hourly_rate: 200,
+  size: 3,
+  location: 'Munich',
+  description: "Let's go to fancy clubs.",
+  availability: true)
+
+user_11 = User.create(email: Faker::Internet.email,
+  first_name: "Manuela",
+  last_name: Faker::Name.last_name,
+  password: '123456')
+
+file_11 = URI.open("https://images.unsplash.com/photo-1482575832494-771f74bf6857?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80.jpg")
+  group_11.photos.attach(io: file_11, filename: ".jpg", content_type: "image/jpg")
+  group_11.user = user_11
+  group_11.save
+  puts "Created: #{group_11.name}"
+
+avatar_11 = URI.open("https://images.unsplash.com/photo-1677709074288-043bb0d07d54?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxMHx8fGVufDB8fHx8&auto=format&fit=crop&w=1000&q=60.jpg")
+  user_11.photo.attach(io: avatar_11, filename: ".jpg", content_type: "image/jpg")
+
+  group_11.user = user_11
+  group_11.save
+  puts "Created: #{group_11.name}"
+
+group_12 = Group.create(name: "Let's get creative",
+  event_type: 'Go-With-The-Flow',
+  hourly_rate: 50,
+  size: 10,
+  location: 'Berlin',
+  description: "If you're looking for people to paint with - look no more.",
+  availability: true)
+
+user_12 = User.create(email: Faker::Internet.email,
+  first_name: "Alberto",
+  last_name: Faker::Name.last_name,
+  password: '123456')
+
+  avatar_12 = URI.open("https://images.unsplash.com/photo-1489424731084-a5d8b219a5bb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHByb2ZpbGUlMjBwaWN8ZW58MHx8MHx8&auto=format&fit=crop&w=1000&q=60.jpg")
+  user_12.photo.attach(io: avatar_12, filename: ".jpg", content_type: "image/jpg")
+
+group_12.user = user_12
+  group_12.save
+  puts "Created: #{group_12.name}"
   puts "Groups: #{Group.count} created -- Users: #{User.count} created."
 
-  booking_1 = Booking.create(
-    date: "24/04/2023",
-    hours_booked: 3)
-    booking_1.user = user_1
-  booking_1.group = group_1
-  booking_1.save
-  puts "Created: #{booking_1.date}"
+  # bookings
 
-  booking_2 = Booking.create(
-    date: "21/03/2023",
-    hours_booked: 2)
-    booking_2.user = user_2
-  booking_2.group = group_2
-  booking_2.save
-  puts "Created: #{booking_2.date}"
+booking_1 = Booking.create(
+  date: "24/04/2023",
+  hours_booked: 3)
+  booking_1.user = user_12
+booking_1.group = group_12
+booking_1.save
+puts "Created: #{booking_1.date}"
 
-  booking_3 = Booking.create(
-    date: "21/03/2023",
-    hours_booked: 2)
-    booking_3.user = user_3
-  booking_2.group = group_2
-  booking_2.save
-  puts "Created: #{booking_2.date}"
+booking_2 = Booking.create(
+  date: "21/03/2023",
+  hours_booked: 2)
+  booking_2.user = user_12
+booking_2.group = group_12
+booking_2.save
+puts "Created: #{booking_2.date}"
+
+booking_3 = Booking.create(
+  date: "21/03/2023",
+  hours_booked: 2)
+  booking_3.user = user_12
+booking_2.group = group_12
+booking_2.save
+puts "Created: #{booking_2.date}"
