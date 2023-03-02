@@ -1,3 +1,12 @@
+.container-welcome {
+  align-items: center;
+}
+
+.container-welcome h2 {
+  align-items: center;
+  font-size: 40px;
+}
+
 .container-sm {
   display: flex;
 }
@@ -114,35 +123,40 @@
 
 .card-user-show-info {
   flex-grow: 1;
-  padding: 10px;
   display: flex;
   align-items: center;
 }
 
 .card-user-show {
-  height: 300px;
+  height: auto;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 30px;
+  margin: 20px;
   display: flex;
-  padding: 50px;
+  padding: 40px;
 }
 
 .card-user-show h2 {
+  opacity: 1;
   font-size: 25px;
 }
 
 .card-user-show p {
   font-size: 16px;
   line-height: 1.4;
-  opacity: .7;
   margin-bottom: 12px;
   margin-top: 8px;
   margin-left: 8px;
 }
 
 .card-user-show .card-user-show-infos {
-  margin-left: 8px;
+  align-items: center;
+  opacity: .7;
+}
+
+.card-user-show .card-user-show-infos h2 {
+  align-items: center;
+  opacity: 1;
 }
 
 .row {
@@ -168,20 +182,10 @@
   margin-left: 8px;
 }
 
-// .card-user-account-infos img {
-//   height: 100%;
-//   width: 120px;
-//   object-fit: cover;
-// }
-
 .card-user-account-infos p {
-  font-size: 12px;
+  font-size: 16px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
 }
-
-// .card-product .card-product-infos {
-//   padding: 16px;
-// }
