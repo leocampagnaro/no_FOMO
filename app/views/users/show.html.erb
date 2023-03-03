@@ -56,7 +56,7 @@
                 <ul>
                   <li><%= booking.date %> - <%= booking.group.name %> - <%= booking.hours_booked %> hours <br>
                   Booker: <%= booking.user.first_name %> <%= booking.user.last_name %><br>
-                  <button-user class="btn btn-outline-dark btn-sm disabled">Total Price of Booking : <%= (booking.hours_booked*booking.group.hourly_rate)%>0 €</button-user>
+                  <button-user class="btn btn-outline-dark btn-sm disabled">Booking Amount: <%= (booking.hours_booked*booking.group.hourly_rate)%>0 €</button-user>
                   <button-user class="btn btn-outline-warning btn-sm text-decoration-none"><%= link_to "Decline Booking", booking, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button-user>
                   </li>
                 </ul>
