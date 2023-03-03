@@ -27,10 +27,10 @@
               <% @user.bookings.each do |booking| %>
               <ul><li><%= booking.group.event_type %>: <br> <%= booking.group.name %> - <%= booking.date %><br>
               <button-user class="btn btn-outline-dark btn-sm disabled">Total Price of Booking : <%= (booking.hours_booked*booking.group.hourly_rate)%>0 €</button-user><br>
-                <div>
+                <div class="m-1">
                   <button-user class="btn btn-light btn-sm text-decoration-none"><%= link_to "See Group", group_path(booking.group.id) %></button-user>
                   <button-user class="btn btn-light btn-sm text-decoration-none"><%= link_to "Review",  edit_booking_path(booking.id) %></button-user>
-                  <button-user class="btn btn-light btn-sm text-decoration-none"><%= link_to "Cancel", booking, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button-user>
+                  <button-user class="btn btn-outline-warning btn-sm text-decoration-none"><%= link_to "Cancel Booking", booking, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button-user>
                 </div>
               </a>
               </li></ul>
@@ -43,7 +43,7 @@
               <% @user.groups.each do |group| %>
               <ul><li><%= group.name %> - <%= group.size %> people - <%= group.event_type %><br>
               <button-user class="btn btn-light btn-sm text-decoration-none !important"><%= link_to "See Group", group_path(group) %></button-user>
-              <button-user class="btn btn-light btn-sm text-decoration-none"><%= link_to "Delete", group_path(group), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button-user>
+              <button-user class="btn btn-outline-warning btn-sm text-decoration-none"><%= link_to "Delete", group_path(group), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button-user>
               </li></ul>
               <% end %>
             </div>
@@ -54,7 +54,11 @@
               <% @user.groups.each do |group| %>
                 <% group.bookings.each do |booking| %>
                 <ul>
-                  <li><%= booking.date %> - <%= booking.group.name %> - <%= booking.hours_booked %> hours</li>
+                  <li><%= booking.date %> - <%= booking.group.name %> - <%= booking.hours_booked %> hours <br>
+                  Booker: <%= booking.user.first_name %> <%= booking.user.last_name %><br>
+                  <button-user class="btn btn-outline-dark btn-sm disabled">Total Price of Booking : <%= (booking.hours_booked*booking.group.hourly_rate)%>0 €</button-user>
+                  <button-user class="btn btn-outline-warning btn-sm text-decoration-none"><%= link_to "Decline Booking", booking, data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} %></button-user>
+                  </li>
                 </ul>
                 <% end %>
               <% end %>

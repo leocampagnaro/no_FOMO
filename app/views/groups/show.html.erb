@@ -91,13 +91,14 @@
       <div class="p-3">
       <h5>Group Reviews :</h5>
       <% if average != 0 %>
-        <em><%= average %>/5 - <%= i %> reviewers</em>
+        <em><%= average.round(2) %>/5 - <%= i %> reviewers</em>
         <p><% @group.bookings.each do |booking| %></p>
           <% if booking.review != nil%>
             <% booking.rating.to_i.times do %>
               ⭐️
             <% end %> : &nbsp;
-            <%=  booking.review %>
+            <%=  booking.review %><br>
+            <small><em><%= booking.date %> - <%= booking.user.first_name %></em></small>
           <% end  %>
         <% end  %>
       <% else %>

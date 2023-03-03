@@ -1,4 +1,4 @@
-<div class="container m-2">
+<div class="container p-5 m-5">
   <h3>⚡️ Leave a review for <strong><%= @booking.group.name %></strong> :</h3>
   <%= simple_form_for [@group, @booking] do |f| %>
     <br>
@@ -8,5 +8,4 @@
     <%= f.input :rating, label: "Rating /5", :collection => 1..5, required: true%>
     <%= f.submit "Submit", class: "btn btn-primary" %>
   <% end %>
-<br>
 </div>
