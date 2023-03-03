@@ -93,6 +93,7 @@
   height: 450px;
   width: 600px;
   border-radius: 3px;
+  object-fit: cover;
   box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
@@ -117,6 +118,7 @@
   border-radius: 3px;
   display: flex;
   align-items: center;
+  object-fit: cover;
   justify-content: space-around;
   box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.2);
 }

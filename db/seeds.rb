@@ -46,6 +46,8 @@ user_2 = User.create(email: Faker::Internet.email,
   last_name: Faker::Name.last_name,
   password: '123456')
 
+avatar_2 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677847545/Total_drama_brunette_icon_eqxeat.jpg")
+user_2.photo.attach(io: avatar_2, filename: ".jpg", content_type: "image/jpg")
 file_2 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677611365/no_fomo/__3_ayndin.jpg")
 group_2.photos.attach(io: file_2, filename: ".jpg", content_type: "image/jpg")
 group_2.user = user_2
@@ -67,7 +69,8 @@ user_3 = User.create(email: Faker::Internet.email,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   password: '123456')
-
+avatar_3 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677847541/paigesch___TikTok_okwtlx.jpg")
+user_3.photo.attach(io: avatar_3, filename: ".jpg", content_type: "image/jpg")
 file_3 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677611433/no_fomo/__5_lixqca.jpg")
 group_3.photos.attach(io: file_3, filename: ".jpg", content_type: "image/jpg")
 group_3.user = user_3
@@ -87,7 +90,8 @@ user_4 = User.create(email: Faker::Internet.email,
   first_name: "Nathalia",
   last_name: Faker::Name.last_name,
   password: '123456')
-
+  avatar_4 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677847540/7eb36de0-6ff9-4492-8075-358e02487ee4_xxaraj.jpg")
+  user_4.photo.attach(io: avatar_4, filename: ".jpg", content_type: "image/jpg")
 file_4 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677611360/no_fomo/__12cs___textfic___L_espoir_vlhbww.jpg")
 group_4.photos.attach(io: file_4, filename: ".jpg", content_type: "image/jpg")
 group_4.user = user_4
@@ -106,7 +110,8 @@ user_5 = User.create(email: Faker::Internet.email,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   password: '123456')
-
+  avatar_5 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677847539/735d9ad2-a1c2-4e58-9ea4-cd2d338b42a1_dkh8pc.jpg")
+  user_5.photo.attach(io: avatar_5, filename: ".jpg", content_type: "image/jpg")
 file_5 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677611471/no_fomo/__7_li4ius.jpg")
 group_5.photos.attach(io: file_5, filename: ".jpg", content_type: "image/jpg")
 group_5.user = user_5
@@ -128,7 +133,8 @@ user_6 = User.create(email: Faker::Internet.email,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   password: '123456')
-
+  avatar_6 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677847690/Kim_Possible__Recolor_lhbgx5.jpg")
+  user_6.photo.attach(io: avatar_6, filename: ".jpg", content_type: "image/jpg")
 file_6 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677752045/Board_in_the_Library_Part_Six__Board_Game_Night_Basics_1_gjqv5l.jpg")
 group_6.photos.attach(io: file_6, filename: ".jpg", content_type: "image/jpg")
 group_6.user = user_6
@@ -148,7 +154,8 @@ user_7 = User.create(email: Faker::Internet.email,
   first_name: Faker::Name.first_name,
   last_name: Faker::Name.last_name,
   password: '123456')
-
+  avatar_7 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677847753/Photo_de_profil_nzmhk0.jpg")
+  user_7.photo.attach(io: avatar_7, filename: ".jpg", content_type: "image/jpg")
 file_7 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677611363/no_fomo/We_Found_the_Most_Instagrammed_Brunch_in_LA_ugbd5e.jpg")
 group_7.photos.attach(io: file_7, filename: ".jpg", content_type: "image/jpg")
 group_7.user = user_7
