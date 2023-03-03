@@ -1,12 +1,11 @@
 <div class="footer">
   <div class="footer-links">
-    <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
-    <a href="#" target="_blank"><i class="fab fa-facebook"></i></a>
-    <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+    <a href="#"><i class="fa-solid fa-heart"></i><small> &nbsp;&nbsp;Eradicating FOMO, one loser at a time...</small></a>
   </div>
   <%= link_to destroy_user_session_path, data: {turbo_method: :delete} do %>
     <div class="footer-copyright">
       No-FOMO <i class="fa-solid fa-user-group"></i> 2023
     </div>
   <% end %>
+
 </div>
