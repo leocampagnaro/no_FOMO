@@ -2,34 +2,58 @@
   <div class="searchbar-container"><%= render "shared/searchbar" %></div><br>
     <div class="container md-5">
       <div class="row justify-content-center">
-        <div class="col-sm">
+        <div class="col-sm border-0">
+          <a href="">
+          <i class=""></i><br>
+          <small></small></i>
+          </a>
+        </div>
+        <div class="col-sm border-0">
+          <a href="">
+          <i class=""></i><br>
+          <small></small></i>
+          </a>
+        </div>
+        <div class="col-sm border-0 for-icon">
           <a href="/groups?query=party&commit=Search">
           <i class="fa-solid fa-champagne-glasses"></i><br>
           <small>Party</small></i>
           </a>
         </div>
-        <div class="col-sm">
-          <a href="/groups?query=party&commit=Search">
+        <div class="col-sm border-0 for-icon">
+          <a href="/groups?query=chill+%26+games&commit=Search">
           <i class="fa-solid fa-puzzle-piece"></i><br>
           <small>Chill & Games</small></i>
           </a>
         </div>
-        <div class="col-sm">
+        <div class="col-sm border-0 for-icon">
           <a href="/groups?query=boozy+brunch&commit=Search">
           <i class="fa-solid fa-utensils"></i><br>
           <small>Boozy Brunch</small></i>
           </a>
         </div>
-        <div class="col-sm">
+        <div class="col-sm border-0 for-icon">
           <a href="/groups?query=xxl+event&commit=Search">
           <i class="fa-solid fa-people-group"></i>
           <br><small>XXL Event</small></i>
           </a>
         </div>
-        <div class="col-sm">
+        <div class="col-sm border-0 for-icon">
           <a href="/groups?query=go-with-the-flow&commit=Search">
           <i class="fa-brands fa-pagelines"></i>
-          <br><small>Go-With-The-Flow</small></i>
+          <br><small>Go-WTF</small></i>
+          </a>
+        </div>
+        <div class="col-sm border-0">
+          <a href="">
+          <i class=""></i><br>
+          <small></small></i>
+          </a>
+        </div>
+        <div class="col-sm border-0">
+          <a href="">
+          <i class=""></i><br>
+          <small></small></i>
           </a>
         </div>
       </div>
@@ -43,15 +67,16 @@
       <%= link_to group_path(group), class:"text-decoration-none" do  %>
           <div class="card m-1">
           <% if group.photos.attached? %>
-          <%= cl_image_tag group.photos[0].key %>
+          <%= cl_image_tag group.photos[0].key, id: "image-#{group.id}" %>
           <% else %>
             <img src="https://source.unsplash.com/collection/2706932/"/>
           <% end %>
           <div class="card-infos">
             <div>
+              <button class="btn-prev fa-regular fa-circle-left" id="previous" data-group-id="<%= group.id %>"></button>
               <h4 class="group-name"><%=group.name%></h4>
               <p class="event-type"><%= group.event_type %></p>
-              <p class="group-description"><%= group.location%>  -  <%= group.size%> people</p>
+              <p class="group-description"><%= group.location%>  -  <%= group.size%> people</p><button class="btn-next fa-regular fa-circle-right" id="next" data-group-id="<%= group.id %>"></button>
             </div>
             <h2 class="card-pricing">€<%= group.hourly_rate.round %>/hour</h2>
             <% if group.user.photo.attached? %>
@@ -65,3 +90,37 @@
       <% end %>
     </div>
   </div>
+
+
+<script src="https://use.fontawesome.com/62e43a72a9.js"></script>
+<script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+<script>
+    $( document ).ready(function() {
+
+        var images = [
+            "https://source.unsplash.com/collection/50580326/",
+            "https://source.unsplash.com/collection/1709828/",
+            "https://source.unsplash.com/collection/28562203/"
+        ];
+
+        var imageIndex = 0;
+        var groupId = 0;
+
+        $(".btn-prev").on("click", function(event){
+            event.preventDefault()
+            imageIndex = (imageIndex + images.length -1) % (images.length);
+            var groupId = event.target.dataset.groupId;
+            $(`#image-${groupId}`).attr('src', images[imageIndex]);
+        });
+
+        $(".btn-next").on("click", function(event){
+            event.preventDefault()
+            imageIndex = (imageIndex+1) % (images.length);
+            var groupId = event.target.dataset.groupId;
+            $(`#image-${groupId}`).attr('src', images[imageIndex]);
+        });
+
+        $(`#image-${groupId}`).attr(images[0]);
+
+    });
+</script>
