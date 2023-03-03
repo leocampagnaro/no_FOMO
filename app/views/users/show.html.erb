@@ -8,7 +8,7 @@
       <div class="column-1">
           <div class="card-user-show justify-content-center">
             <div class="card-user-account-infos text-center">
-              <%= cl_image_tag @user.photo.key, id: "small-pic" if @user.photo.key %><br>
+              <%= cl_image_tag @user.photo.key, id: "user-pic" if @user.photo.key %><br>
                 <h2>Account Settings</h2>
                 <p><strong> Name : </strong><%= @user.first_name %> <%= @user.last_name%></p>
                 <p><strong> Email : </strong><%= @user.email%></p><br>

@@ -120,6 +120,16 @@
   box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.2);
 }
 
+#user-pic {
+  height: 220px;
+  width: auto;
+  border-radius: 3px;
+  opacity: 1;
+  align-items: center;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
 .container-show-user {
   margin: 100px;
   display: flex;
@@ -182,8 +192,8 @@
   flex: 1;
 }
 
-.card-user-account-infos {
-  font-size: 16px;
+.card-user-account-infos h2 {
+  font-size: 25px;
   line-height: 1.4;
   opacity: .7;
   margin-bottom: 12px;
@@ -198,7 +208,6 @@
   margin-bottom: 0;
   margin-top: 8px;
 }
-
 
 .btn-sm {
   text-decoration: none !important;
