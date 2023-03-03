@@ -1,4 +1,42 @@
-<div class="searchbar-container"><%= render "shared/searchbar" %></div>
+<div class="container">
+  <div class="searchbar-container"><%= render "shared/searchbar" %></div><br>
+    <div class="container md-5">
+      <div class="row justify-content-center">
+        <div class="col-sm">
+          <a href="/groups?query=party&commit=Search">
+          <i class="fa-solid fa-champagne-glasses"></i><br>
+          <small>Party</small></i>
+          </a>
+        </div>
+        <div class="col-sm">
+          <a href="/groups?query=party&commit=Search">
+          <i class="fa-solid fa-puzzle-piece"></i><br>
+          <small>Chill & Games</small></i>
+          </a>
+        </div>
+        <div class="col-sm">
+          <a href="/groups?query=boozy+brunch&commit=Search">
+          <i class="fa-solid fa-utensils"></i><br>
+          <small>Boozy Brunch</small></i>
+          </a>
+        </div>
+        <div class="col-sm">
+          <a href="/groups?query=xxl+event&commit=Search">
+          <i class="fa-solid fa-people-group"></i>
+          <br><small>XXL Event</small></i>
+          </a>
+        </div>
+        <div class="col-sm">
+          <a href="/groups?query=go-with-the-flow&commit=Search">
+          <i class="fa-brands fa-pagelines"></i>
+          <br><small>Go-With-The-Flow</small></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
   <div class="container-sm">
     <div class="cards">
       <% @groups.each do |group| %>

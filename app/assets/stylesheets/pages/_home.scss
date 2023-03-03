@@ -3,21 +3,31 @@
   text-decoration: none;
 }
 
-.card-infos a:hover {
-  color: rgb(94, 94, 94);
-}
-
 .card-infos .group-name {
   font-size: 15px;
   font-weight: bolder;
+  white-space: nowrap;
+  width: 12em;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .card-infos .event-type {
-  font-size: 12px;
+  font-size: 13px;
 }
 
 .card-infos .group-description {
   font-size: 11px;
   font-style: italic;
   color: rgb(83, 83, 83);
+}
+
+.col-sm a {
+  text-decoration: none;
+}
+
+.col-sm {
+  text-align: center;
+  border: 1px #374151 solid;
+  border-radius: 50px;
 }
