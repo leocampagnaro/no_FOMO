@@ -43,7 +43,7 @@
 .card > img {
   height: 200px;
   width: 100%;
-  object-fit: fill;
+  object-fit: cover;
 }
 
 .card h2 {
@@ -132,7 +132,7 @@
 }
 
 .container-show-user {
-  margin: 100px;
+  margin: 30px;
   display: flex;
 }
 
