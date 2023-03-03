@@ -23,7 +23,7 @@ user_1 = User.create(email: Faker::Internet.email,
   last_name: Faker::Name.last_name,
   password: '123456')
 
-avatar_1 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677229590/cld-sample.jpg")
+avatar_1 = URI.open("https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80.jpg")
 user_1.photo.attach(io: avatar_1, filename: ".jpg", content_type: "image/jpg")
 file_1 = URI.open("https://res.cloudinary.com/dp4lgffrz/image/upload/v1677611752/no_fomo/Group_of_friends_eating_burger_on_mountain_top_p4gkry.jpg")
 group_1.photos.attach(io: file_1, filename: ".jpg", content_type: "image/jpg")

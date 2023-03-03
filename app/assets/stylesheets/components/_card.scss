@@ -142,10 +142,11 @@
 .card-user-show {
   height: auto;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  margin: 20px;
+  box-shadow: 0 0 10px rgba(110, 110, 110, 0.2);
+  margin: 22px;
   display: flex;
-  padding: 40px;
+  padding: 35px;
+  border-radius: 8px;
 }
 
 .card-user-show h2 {
@@ -205,3 +206,15 @@
   margin-bottom: 0;
   margin-top: 8px;
 }
+
+
+.btn-sm {
+  text-decoration: none !important;
+}
+
+.text-decoration-none {
+  text-decoration: none !important;
+}
+
+a:hover{text-decoration: none !important}
+a{text-decoration: none !important}
