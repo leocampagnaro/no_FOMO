@@ -25,6 +25,7 @@
   background-position: center;
   justify-content: space-around;
   border-radius: 3%;
+
 }
 
 .card:hover {
@@ -210,3 +211,81 @@
 
 a:hover{text-decoration: none !important}
 a{text-decoration: none !important}
+
+.btn-prev {
+  position: absolute;
+  right: 235px;
+  bottom: 175px;
+  padding: 5px;
+  padding-right:15px;
+  opacity: 0.3;
+  z-index: 1000;
+  border-radius: 50px;
+  text-align: center;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  font-size: 32px;
+  color: white;
+}
+
+.btn-prev:hover {
+  position: absolute;
+  right: 242px;
+  bottom: 175px;
+  padding: 5px;
+  padding-right:15px;
+  opacity: 0.7;
+  z-index: 1000;
+  border-radius: 50px;
+  text-align: center;
+}
+
+// .btn-prev:hover {
+//   position: absolute;
+//   right: 257px;
+//   bottom: 175px;
+//   padding: 5px;
+//   padding-right:15px;
+//   opacity: 0.6;
+//   z-index: 1000px;
+//   border-radius: 50px;
+// }
+
+.btn-next {
+  position: absolute;
+  left: 248px;
+  bottom: 175px;
+  padding: 5px;
+  padding-right:15px;
+  opacity: 0.3;
+  z-index: 1000;
+  border-radius: 50px;
+  text-align: center;
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  font-size: 32px;
+  color: white;
+}
+
+.btn-next:hover {
+  position: absolute;
+  left: 252px;
+  bottom: 175px;
+  padding: 5px;
+  padding-right:15px;
+  opacity: 0.7;
+  z-index: 1000;
+  border-radius: 50px;
+  text-align: center;
+}
+
+.for-icon {
+  height: 52px;
+
+}
