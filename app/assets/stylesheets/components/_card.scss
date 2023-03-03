@@ -21,10 +21,8 @@
 
 .card {
   overflow: hidden;
-  background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgb(232, 232, 232);
   background-position: center;
-  border-radius: 1px;
   justify-content: space-around;
   border-radius: 3%;
 }
@@ -34,9 +32,9 @@
   transform: translate3D(0,-1px,0) scale(1.02);
   overflow: hidden;
   background: rgb(220, 220, 220);
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0);
   background-position: center;
-  border-radius: 2px;
+  border-radius: 1px;
   justify-content: space-around;
   border-radius: 3%;
 }
@@ -88,12 +86,6 @@
   flex-grow: 1;
   padding: 8px;
   display: flex;
-}
-
-.pics-main {
-  // height: 100px;
-  // width: 50px;
-  // border-radius: 3px;
 }
 
 #main-pic {
